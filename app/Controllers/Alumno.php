@@ -29,6 +29,17 @@ class Alumno extends BaseController
         view('common/footer');
     }
 
+    public function insert(){
+        $alumnoModel = model('AlumnoModel');
+        $data = [
+            "nombre" => $_POST['nombre'],
+            "sexo" => $_POST['sexo'],
+            "fechaNacimiento" => $_POST['fechaNacimiento']
+        ];
+        $alumnoModel->insert($data, false);
+        return redirect('alumno/mostrar','refresh');
+    }
+
     public function editar(){
 
     }

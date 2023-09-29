@@ -2,7 +2,8 @@
     <div class="row">
        
         <div class="col-8">
-            <form action="">
+            <form action="<?= base_url('alumno/insert'); ?>" method="POST">
+            <?= csrf_field() ?>
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" name="nombre" id="nombre">

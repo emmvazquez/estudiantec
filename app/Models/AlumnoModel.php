@@ -11,9 +11,9 @@ class AlumnoModel extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $useSoftDeletes   = true;
+    protected $protectFields    = false;
+    protected $allowedFields    = ['nombre','fechaNacimiento','sexo'];
 
     // Dates
     protected $useTimestamps = false;
