@@ -40,6 +40,12 @@ class Alumno extends BaseController
         return redirect('alumno/mostrar','refresh');
     }
 
+    public function delete($id){
+        $alumnoModel = model('AlumnoModel');
+        $alumnoModel->delete($id);
+        return redirect('alumno/mostrar','refresh');
+    }
+
     public function editar(){
 
     }
