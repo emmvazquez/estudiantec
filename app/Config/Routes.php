@@ -36,9 +36,11 @@ $routes->get('/', 'Home::index');
 $routes->get('/alumno', 'Alumno::index');
 $routes->get('/alumno/mostrar', 'Alumno::mostrar');
 $routes->get('/alumno/agregar', 'Alumno::agregar');
-$routes->post('/alumno/insert', 'Alumno::insert');
-$routes->get('/alumno/delete/(:int)','Alumno::delete');
+$routes->get('/alumno/editar/(:int)', 'Alumno::editar/$1');
+$routes->get('/alumno/delete/(:int)','Alumno::delete/$1');
 
+$routes->post('/alumno/insert', 'Alumno::insert');
+$routes->post('/alumno/update', 'Alumno::update');
 /*
 $routes->get('/alumno/mostrar/(:int)/(:int)', 'Alumno::mostrar/$1/$2');
 $routes->get('/alumno/subirimagen', 'Alumno::subirImagen');

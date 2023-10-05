@@ -46,8 +46,15 @@ class Alumno extends BaseController
         return redirect('alumno/mostrar','refresh');
     }
 
-    public function editar(){
+    public function editar($id){
+        $alumnoModel = model('AlumnoModel');
+        $data['alumno'] = $alumnoModel->find($id);
 
+        return 
+        view('common/head') .
+        view('common/menu') .
+        view('alumno/editar',$data) .
+        view('common/footer');
     }
 
     public function estadistica(){

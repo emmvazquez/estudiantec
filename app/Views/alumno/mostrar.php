@@ -17,6 +17,7 @@
                         <td><?=$alumno->sexo ?></td>
                         <td>    
                             <a href="<?=base_url('index.php/alumno/delete/'.$alumno->id);?>">Eliminar</a>
+                            <a href="<?=base_url('index.php/alumno/editar/'.$alumno->id);?>">Editar</a>
                         </td>
                     </tr>
                     <?php endforeach ?>
