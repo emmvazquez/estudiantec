@@ -36,6 +36,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/alumno', 'Alumno::index');
 $routes->get('/alumno/mostrar', 'Alumno::mostrar');
 $routes->get('/alumno/agregar', 'Alumno::agregar');
+$routes->get('/alumno/buscar', 'Alumno::buscar');
 $routes->get('/alumno/editar/(:int)', 'Alumno::editar/$1');
 $routes->get('/alumno/delete/(:int)','Alumno::delete/$1');
 

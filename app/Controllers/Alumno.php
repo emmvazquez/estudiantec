@@ -57,6 +57,39 @@ class Alumno extends BaseController
         view('common/footer');
     }
 
+    public function update(){
+        $alumnoModel = model('AlumnoModel');
+        $data = [
+            "nombre" => $_POST['nombre'],
+            "sexo" => $_POST['sexo'],
+            "fechaNacimiento" => $_POST['fechaNacimiento']
+        ];
+        $alumnoModel->update($_POST['id'],$data);
+        return redirect('alumno/mostrar','refresh');
+    }
+
+    public function buscar(){
+        $alumnoModel = model('AlumnoModel');
+        if(isset($_GET['nombre'])){
+            $nombre = $_GET['nombre'];
+            $sexo=$_GET['sexo'];
+            $data['alumnos']= $alumnoModel->like('nombre',$nombre)
+                                ->Like('sexo',$sexo)
+                                ->findAll();
+        }
+        else{
+            $nombre = "";
+            $data['alumnos']=$alumnoModel->findAll();
+        }
+
+        return 
+            view('common/head') .
+            view('common/menu') .
+            view('alumno/buscar',$data) .
+            view('common/footer');
+    }
+
+
     public function estadistica(){
 
     }

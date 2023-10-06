@@ -6,6 +6,7 @@
             <h2>Editar Alumno</h2>
             <form action="<?= base_url('alumno/update'); ?>" method="POST">
             <?= csrf_field() ?>
+            <input type="hidden" name ="id" value="<?= $alumno->id ?>" />
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" 
