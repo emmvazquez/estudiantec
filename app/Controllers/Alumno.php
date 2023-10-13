@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 
 class Alumno extends BaseController
 {
+    protected $helpers = ['form'];
     public function index()
     {
         //
@@ -13,7 +14,9 @@ class Alumno extends BaseController
 
     public function mostrar(){
         $alumnoModel = model('AlumnoModel');
+        
         $data['alumnos'] = $alumnoModel->findAll();
+  
         return 
         view('common/head') .
         view('common/menu') .
@@ -22,11 +25,32 @@ class Alumno extends BaseController
     }
 
     public function agregar(){
-        return 
+        helper(['form','url']);
+        $validation =  \Config\Services::validation();
+        if ((strtolower($this->request->getMethod()) !== 'get')) {
+            return 
+            view('common/head') .
+            view('common/menu') .
+            view('alumno/agregar') .
+            view('common/footer');
+        }
+
+        $rules = [];
+
+        if (! $this->validate($rules)) {
+            view('common/head') .
+        view('common/menu') .
+        view('alumno/agregar',['validation' => $validation]) .
+        view('common/footer');
+        }
+
+        // If you want to get the validated data.
+        //$validData = $this->validator->getValidated();
+       /* return 
         view('common/head') .
         view('common/menu') .
         view('alumno/agregar') .
-        view('common/footer');
+        view('common/footer');*/
     }
 
     public function insert(){

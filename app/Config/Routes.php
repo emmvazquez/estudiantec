@@ -40,6 +40,10 @@ $routes->get('/alumno/buscar', 'Alumno::buscar');
 $routes->get('/alumno/editar/(:int)', 'Alumno::editar/$1');
 $routes->get('/alumno/delete/(:int)','Alumno::delete/$1');
 
+$routes->get('/carrera/agregar','Carrera::agregar');
+$routes->post('/carrera/agregar','Carrera::agregar');
+
+
 $routes->post('/alumno/insert', 'Alumno::insert');
 $routes->post('/alumno/update', 'Alumno::update');
 /*

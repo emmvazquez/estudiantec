@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-       
+
         <div class="col-8">
             <form action="<?= base_url('alumno/insert'); ?>" method="POST">
             <?= csrf_field() ?>

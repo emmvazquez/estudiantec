@@ -13,7 +13,7 @@ class CarreraModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['nombre','acronimo'];
 
     // Dates
     protected $useTimestamps = false;
