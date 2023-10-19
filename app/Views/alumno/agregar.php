@@ -22,11 +22,23 @@
                         <option value="Mujer">Mujer</option>
                     </select>
                 </div>
-
+                <div class="mb-3">
+                    <select name="idGrado" class="form-control">
+                        <?php foreach($grados as $grado) : ?>
+                            <option value="<?=$grado->idGrado ?>"><?=$grado->grado ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                <select name="idGrupo" class="form-control">
+                        <?php foreach($grupos as $grupo) : ?>
+                            <option value="<?=$grupo->idGrupo ?>"><?=$grupo->grupo ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
                 <div class="mb-3">
                     <input type="submit" class="btn btn-success">
                 </div>
-
 
             </form>
 

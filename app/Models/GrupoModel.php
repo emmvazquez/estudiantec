@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AlumnoModel extends Model
+class GrupoModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'Alumno';
-    protected $primaryKey       = 'id';
+    protected $table            = 'Grupos';
+    protected $primaryKey       = 'idGrupo';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
-    protected $useSoftDeletes   = true;
-    protected $protectFields    = false;
-    protected $allowedFields    = ['nombre','fechaNacimiento','sexo','idGrado','idGrupo'];
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = ['idGrupo','grupo'];
 
     // Dates
     protected $useTimestamps = false;
