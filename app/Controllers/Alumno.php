@@ -53,13 +53,6 @@ class Alumno extends BaseController
         view('common/footer');
         }
 
-        // If you want to get the validated data.
-        //$validData = $this->validator->getValidated();
-       /* return 
-        view('common/head') .
-        view('common/menu') .
-        view('alumno/agregar') .
-        view('common/footer');*/
     }
 
     public function insert(){
