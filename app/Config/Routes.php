@@ -44,6 +44,9 @@ $routes->get('/carrera/agregar','Carrera::agregar');
 $routes->post('/carrera/agregar','Carrera::agregar');
 
 
+$routes->get('/usuario/login','UserController::index');
+$routes->post('/usuario/login','UserController::index');
+
 $routes->post('/alumno/insert', 'Alumno::insert');
 $routes->post('/alumno/update', 'Alumno::update');
 /*

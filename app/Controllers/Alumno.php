@@ -14,7 +14,12 @@ class Alumno extends BaseController
 
     public function mostrar(){
         $alumnoModel = model('AlumnoModel');
-        
+        $session = session();
+        if($session->get('logged_in')!=TRUE){
+            return redirect('usuario/login','refresh');
+        }
+
+
         $data['alumnos'] = $alumnoModel->findAll();
   
         return 
